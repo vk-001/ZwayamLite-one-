@@ -1,0 +1,58 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">JobLabs</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav topnav  ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">All  <span>Categories</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Creative</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Programming</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Corporate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Finance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Medical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Marketing</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6" *ngFor = "let job of jobs">
+            <div class="category mb-30">
+                <div class="job">
+                    <span class="colors5 mb-4">Technical &amp; Programming</span>
+                    <h5><a href="#">{{job.job_role}}</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="left">
+                            <p>{{job.job_desc}}</p>
+                            <p class="place">Recruiter ID ~ {{job.rec_id}}</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <button (click) = "jobDetails(job.job_id)" class="btn btn-success">View</button>
+                        <button (click) = "updateJob(job.job_id)" class="btn btn-info">Update</button>
+                        <button (click) = "deleteJob(job.job_id)" onClick="window.location.reload();" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
